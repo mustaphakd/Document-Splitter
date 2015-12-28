@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <?define GradeSplitter_TargetDir=$(var.GradeSplitter.TargetDir)?>
+  <Product Id="*" Name="GradesFileSplitter" Manufacturer="WoroArch ...." Language="1033" Version="1.0.0.0" UpgradeCode="3f59b53f-73e9-4970-8972-937b753454c3">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" Manufacturer="WoroArch ..." Description="Installs the GSP Grade docx files splitter" Keywords="Docx, Grades, GSP, Papillon, Billingue" Comments="(c) 2015 WoroArch ...." />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    
+<Icon Id="icon.ico" SourceFile="Gsp.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+    <Feature Id="ProductFeature" Title="GradesFileSplitter" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="CMP_AppShorcut" />
+      <ComponentRef Id="CMP_MainIcon" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Group Scholair Papillon">
+          <Directory Id="Images" Name="Images" />
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ShorcutsFOLDER" Name="Group Scholair Papillon" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <!-- <Component Id="ProductComponent"> -->
+      <!-- TODO: Insert files, registry keys, and other resources here. -->
+      <!-- </Component> -->
+      <Component Id="Telerik.Windows.Controls.dll" Guid="dd28ccd6-6b01-4e82-a943-aa21326ca686">
+        <File Id="Telerik.Windows.Controls.dll" Name="Telerik.Windows.Controls.dll" Source="$(var.GradeSplitter_TargetDir)Telerik.Windows.Controls.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="Telerik.Windows.Controls.Docking.dll" Guid="fd27a8c1-0685-4428-afd8-771805d58fd3">
+        <File Id="Telerik.Windows.Controls.Docking.dll" Name="Telerik.Windows.Controls.Docking.dll" Source="$(var.GradeSplitter_TargetDir)Telerik.Windows.Controls.Docking.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="Telerik.Windows.Controls.Navigation.dll" Guid="2923f36d-c3ef-405b-b6ae-cf2ffaf4f3f1">
+        <File Id="Telerik.Windows.Controls.Navigation.dll" Name="Telerik.Windows.Controls.Navigation.dll" Source="$(var.GradeSplitter_TargetDir)Telerik.Windows.Controls.Navigation.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="Telerik.Windows.Data.dll" Guid="b216cce7-10cd-49d1-a75d-b8aa7142822d">
+        <File Id="Telerik.Windows.Data.dll" Name="Telerik.Windows.Data.dll" Source="$(var.GradeSplitter_TargetDir)Telerik.Windows.Data.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="GalaSoft.MvvmLight.dll" Guid="da314d42-1dec-4b44-8d43-e7e02c8b8be3">
+        <File Id="GalaSoft.MvvmLight.dll" Name="GalaSoft.MvvmLight.dll" Source="$(var.GradeSplitter_TargetDir)GalaSoft.MvvmLight.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="Microsoft.Practices.ServiceLocation.dll" Guid="1fc5da51-885f-4311-bed2-86580e66e9d7">
+        <File Id="Microsoft.Practices.ServiceLocation.dll" Name="Microsoft.Practices.ServiceLocation.dll" Source="$(var.GradeSplitter_TargetDir)Microsoft.Practices.ServiceLocation.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="GalaSoft.MvvmLight.Extras.dll" Guid="2efbf5b6-141a-4f59-b4e0-982ae6f23afc">
+        <File Id="GalaSoft.MvvmLight.Extras.dll" Name="GalaSoft.MvvmLight.Extras.dll" Source="$(var.GradeSplitter_TargetDir)GalaSoft.MvvmLight.Extras.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="GalaSoft.MvvmLight.Platform.dll" Guid="a300931d-b565-4649-8aa8-cdd3b19f8476">
+        <File Id="GalaSoft.MvvmLight.Platform.dll" Name="GalaSoft.MvvmLight.Platform.dll" Source="$(var.GradeSplitter_TargetDir)GalaSoft.MvvmLight.Platform.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="System.Windows.Interactivity.dll" Guid="dd76e9c2-22b6-4c46-b74b-463798308db6">
+        <File Id="System.Windows.Interactivity.dll" Name="System.Windows.Interactivity.dll" Source="$(var.GradeSplitter_TargetDir)System.Windows.Interactivity.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="WoroArch.Infrastructure.Desktop.dll" Guid="3798015e-022c-4b31-ad17-de52be541c05">
+        <File Id="WoroArch.Infrastructure.Desktop.dll" Name="WoroArch.Infrastructure.Desktop.dll" Source="$(var.GradeSplitter_TargetDir)WoroArch.Infrastructure.Desktop.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="DocumentFormat.OpenXml.dll" Guid="008fde51-6fce-4c8a-af84-895e050476f4">
+        <File Id="DocumentFormat.OpenXml.dll" Name="DocumentFormat.OpenXml.dll" Source="$(var.GradeSplitter_TargetDir)DocumentFormat.OpenXml.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="System.IO.Packaging.dll" Guid="b8e9d632-e152-468b-a2dc-3c9fd448b59e">
+        <File Id="System.IO.Packaging.dll" Name="System.IO.Packaging.dll" Source="$(var.GradeSplitter_TargetDir)System.IO.Packaging.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="OpenXmlPowerTools.dll" Guid="92afaeeb-5f95-4f8a-9443-37961173f103">
+        <File Id="OpenXmlPowerTools.dll" Name="OpenXmlPowerTools.dll" Source="$(var.GradeSplitter_TargetDir)OpenXmlPowerTools.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="GSP_Document_Spliter.exe.config" Guid="68a9042d-5228-4679-8ce3-e2fc8f617a78">
+        <File Id="GSP_Document_Spliter.exe.config" Name="GSP Document Spliter.exe.config" Source="$(var.GradeSplitter_TargetDir)GSP Document Spliter.exe.config" KeyPath="yes" />
+      </Component>
+      <Component Id="Read_Me.txt" Guid="9150c376-faf5-4602-af62-1b89095ad4cd">
+        <File Id="Read_Me.txt" Name="Read Me.txt" Source="$(var.GradeSplitter_TargetDir)Read Me.txt" KeyPath="yes" />
+      </Component>
+      <Component Id="GSP_Document_Spliter.exe" Guid="cbca9362-e76d-457c-9094-4d5adc36a3f6">
+        <File Id="GSP_Document_Spliter.exe" Name="GSP Document Spliter.exe" Source="$(var.GradeSplitter_TargetDir)GSP Document Spliter.exe" KeyPath="yes" > 
+          <netfx:NativeImage Id="ngen_GSP_Splitter.exe" Platform="all" Priority="0" AppBaseDirectory="INSTALLFOLDER"/>
+        </File>
+      </Component>
+    </ComponentGroup>
+    <DirectoryRef Id="Images">
+      <Component Id="CMP_MainIcon" Guid="56B6C3BF-3802-40E6-B386-E1670B1326C1">
+        <File Id="GSP_Gsp.ico" Name="Gsp.ico" Source="$(var.GradeSplitter_TargetDir)Images\Gsp.ico" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="ShorcutsFOLDER">
+      <Component Id="CMP_AppShorcut" Guid="578A6927-C21B-4988-A680-C139B93A9151">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="GSP Grades' File splitter" Icon="icon.ico" Description="Split a file having multiple pages into multiple files" Target="[INSTALLFOLDER]GSP Document Spliter.exe" />
+
+        <Shortcut Id="ReadMeStartMenuShortcut" Name="Instructions" Description="Instruction: Split a file having multiple pages into multiple files" Target="[INSTALLFOLDER]Read Me.txt" />
+
+        <Shortcut Id="UninstallShortcut" Name="Uninstall GSP Grades' File splitter" Description="Uninstall GSP Grades' File splitter and all its wonderfull Components :)" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]" />
+
+        <RemoveFolder Id="RemoveGSPShorcutDir" On="uninstall" />
+
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\WoroArch\GSPFileSplitter" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

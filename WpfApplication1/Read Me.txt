@@ -1,0 +1,14 @@
+﻿After installing and launching the app,
+
+1) select the file that needs to be split
+
+2) select the directory where the generated files need to be stored.
+
+3) either type in the names of the files to be generated in the textbox  and then clicking on the "+" sign
+	or create a text file with the names of the files to be generated each on its own line.
+
+4)when everything is properly set, the ""Run "" button should be enable.  click it to have the tool generate the files.
+
+5) when the tool is finished, the list of generated files should be provided at the bottom of the tool pane.
+
+:) have a nice day
